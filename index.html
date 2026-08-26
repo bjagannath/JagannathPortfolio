@@ -13,9 +13,12 @@
 <body>
 
   <!-- Starfield background -->
-  <div class="stars stars-a"></div>
-  <div class="stars stars-b"></div>
-  <div class="stars stars-c"></div>
+  <div class="stars">
+    <div class="stars-a"></div>
+    <div class="stars-b"></div>
+    <div class="stars-c"></div>
+  </div>
+
   <div class="page-glow"></div>
 
   <header class="topbar">
@@ -47,24 +50,24 @@
 
       <div class="profile-orbit">
 
-          <!-- Rotating outer rings -->
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="orbit orbit-three"></div>
-
-          <!-- Rotating signs -->
-          <div class="orbit-signs signs-one">
-              <span>⌘</span>
-              <span>◇</span>
-              <span>◈</span>
-              <span>□</span>
+          <!-- First orbit - clockwise -->
+          <div class="orbit orbit-one">
+              <span class="orbit-sign sign-1">⌘</span>
+              <span class="orbit-sign sign-2">◇</span>
+              <span class="orbit-sign sign-3">◈</span>
           </div>
 
-          <div class="orbit-signs signs-two">
-              <span>✦</span>
-              <span>⌘</span>
-              <span>◉</span>
-              <span>◇</span>
+          <!-- Second orbit - anti-clockwise -->
+          <div class="orbit orbit-two">
+              <span class="orbit-sign sign-4">✦</span>
+              <span class="orbit-sign sign-5">⌘</span>
+              <span class="orbit-sign sign-6">◉</span>
+          </div>
+
+          <!-- Third orbit - clockwise -->
+          <div class="orbit orbit-three">
+              <span class="orbit-sign sign-7">◇</span>
+              <span class="orbit-sign sign-8">✦</span>
           </div>
 
           <!-- Center profile card -->

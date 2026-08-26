@@ -46,7 +46,7 @@ img {
 }
 
 
-/* ---------- 2. STAR BACKGROUND ---------- */
+/* ---------- STAR BACKGROUND ---------- */
 
 .stars {
     position: fixed;
@@ -55,46 +55,64 @@ img {
     z-index: -3;
 }
 
-.stars-a {
-    opacity: 0.9;
-    background-image:
-        radial-gradient(circle, #cfd9ff 1px, transparent 1.5px),
-        radial-gradient(circle, #7890c9 1px, transparent 1.4px);
-    background-size: 173px 139px, 251px 217px;
-    background-position: 11px 8px, 76px 43px;
-}
-
-.stars-b {
-    opacity: 0.65;
-    background-image:
-        radial-gradient(circle, #ffffff 1px, transparent 1.8px);
-    background-size: 317px 271px;
-}
-
+.stars-a,
+.stars-b,
 .stars-c {
-    opacity: 0.35;
-    background-image:
-        radial-gradient(circle, #5b6c9e 0.8px, transparent 1.3px);
-    background-size: 97px 113px;
+    position: absolute;
+    inset: 0;
 }
 
-.page-glow {
-    position: fixed;
-    top: -230px;
-    left: 50%;
-    width: 720px;
-    height: 390px;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: radial-gradient(
-        ellipse,
-        rgba(83, 38, 255, 0.33),
-        rgba(20, 30, 120, 0.12) 42%,
-        transparent 70%
-    );
-    filter: blur(12px);
-    pointer-events: none;
-    z-index: -2;
+
+/* Small stars */
+.stars-a {
+    opacity: .8;
+    background-image:
+        radial-gradient(circle,#cfd9ff 1px,transparent 1.5px),
+        radial-gradient(circle,#7890c9 1px,transparent 1.4px);
+    background-size: 173px 139px,251px 217px;
+    background-position: 11px 8px,76px 43px;
+    animation: starsA 4.5s ease-in-out infinite alternate;
+}
+/* Medium stars */
+.stars-b {
+    opacity: .65;
+    background-image: radial-gradient(circle,#fff 1px,transparent 1.8px);
+    background-size: 317px 271px;
+    background-position: 170px 35px;
+    animation: starsB 7s ease-in-out infinite alternate;
+}
+/* Big stars */
+.stars-c {
+    opacity: .35;
+    background-image: radial-gradient(circle,#5b6c9e .8px,transparent 1.3px);
+    background-size: 97px 113px;
+    background-position: 40px 80px;
+    animation: starsC 10s ease-in-out infinite alternate;
+}
+
+
+/* ---------- TWINKLING ---------- */
+
+@keyframes starsA {
+    0% { opacity:.35; }
+    25% { opacity:.8; }
+    50% { opacity:.55; }
+    75% { opacity:.95; }
+    100% { opacity:.45; }
+}
+
+@keyframes starsB {
+    0% { opacity:.25; }
+    30% { opacity:.7; }
+    60% { opacity:.4; }
+    100% { opacity:.85; }
+}
+
+@keyframes starsC {
+    0% { opacity:.15; }
+    40% { opacity:.45; }
+    70% { opacity:.25; }
+    100% { opacity:.6; }
 }
 
 
@@ -254,83 +272,63 @@ nav a:hover {
 /* ---------- 5. PROFILE + ROTATING CIRCLES ---------- */
 
 .profile-orbit {
-    width: 450px;
-    height: 450px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
+    position:relative;
+    width:520px;
+    height:520px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .profile-orbit::before {
-    content: "";
-    position: absolute;
-
-    width: 310px;
-    height: 310px;
-    border-radius: 50%;
-
-    background: radial-gradient(
-        circle,
-        rgba(48, 120, 255, 0.22),
-        rgba(77, 34, 255, 0.08),
-        transparent 70%
-    );
-
-    filter: blur(15px);
+    content:"";
+    position:absolute;
+    width:310px;
+    height:310px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(48,120,255,.22),rgba(77,34,255,.08),transparent 70%);
+    filter:blur(18px);
 }
 
 .orbit {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
 }
 
 .orbit-one {
-    width: 420px;
-    height: 420px;
-    border: 1px solid #3159a8;
-    animation: rotate 20s linear infinite;
+    width:490px;
+    height:490px;
+    border:1px solid rgba(86,153,255,.45);
+    animation:rotateClockwise 22s linear infinite;
 }
 
 .orbit-two {
-    width: 350px;
-    height: 350px;
-
-    border: 1px dashed #3159a8;
-    border-left-color: #008cff;
-    border-right-color: #008cff;
-
-    animation: rotate-reverse 15s linear infinite;
+    width:420px;
+    height:420px;
+    border:1px dashed rgba(122,77,255,.6);
+    border-left-color:#00a6ff;
+    border-right-color:#00a6ff;
+    animation:rotateAnti 15s linear infinite;
 }
 
 .orbit-three {
-    width: 290px;
-    height: 290px;
-    border: 1px solid #6548d9;
-    animation: rotate 10s linear infinite;
+    width:355px;
+    height:355px;
+    border:1px solid rgba(74,155,255,.45);
+    animation:rotateClockwise 10s linear infinite;
 }
 
 .profile-frame {
-    width: 230px;
-    padding: 8px 8px 14px;
-
-    position: relative;
-    z-index: 10;
-
-    border: 1px solid rgba(125, 142, 255, 0.75);
-    border-radius: 25px;
-
-    background: #080d28;
-
-    box-shadow:
-        0 0 20px rgba(56, 101, 255, 0.30),
-        0 0 40px rgba(73, 38, 255, 0.12);
-
-    text-align: center;
+    position:relative;
+    z-index:5;
+    width:230px;
+    padding:8px 8px 14px;
+    border-radius:25px;
+    border:1px solid rgba(125,142,255,.8);
+    background:#080d28;
+    text-align:center;
+    box-shadow:0 0 30px rgba(56,101,255,.3);
 }
 
 .profile-photo {
@@ -349,13 +347,6 @@ nav a:hover {
 
     /* This helps the photo blend with the portfolio background */
     mix-blend-mode: normal;
-}
-
-.photo-fallback {
-    width: 100%;
-    height: 100%;
-    display: none;
-    background: linear-gradient(135deg, #11183a, #05091d);
 }
 
 .profile-caption {
@@ -377,57 +368,60 @@ nav a:hover {
     color: #9d7cff;
     font-size: 11px;
 }
-
-.orbit-signs {
-    position: absolute;
-    inset: 0;
-    z-index: 6;
-    pointer-events: none;
+/* ================= ROTATING SIGNS ================= */
+.orbit-sign {
+    position:absolute;
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(91,164,255,.4);
+    border-radius:50%;
+    background:rgba(2,10,32,.85);
+    color:#83c8ff;
+    font-size:17px;
+    text-shadow:0 0 10px #159cff;
 }
 
-.orbit-signs span {
-    position: absolute;
+.orbit-one .orbit-sign { animation:counter22 22s linear infinite; }
+.orbit-two .orbit-sign { animation:counter15 15s linear infinite; }
+.orbit-three .orbit-sign { animation:counter10 10s linear infinite; }
 
-    width: 26px;
-    height: 26px;
+.orbit-one .sign-1 { top:-14px; left:50%; transform:translateX(-50%); }
+.orbit-one .sign-2 { top:70px; right:55px; }
+.orbit-one .sign-3 { bottom:75px; left:45px; }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.orbit-two .sign-4 { top:-14px; left:50%; transform:translateX(-50%); }
+.orbit-two .sign-5 { top:50%; right:-14px; transform:translateY(-50%); }
+.orbit-two .sign-6 { top:50%; left:-14px; transform:translateY(-50%); }
 
-    color: #73c7ff;
-    font-size: 16px;
-    text-shadow: 0 0 10px #159cff;
+.orbit-three .sign-7 { top:-14px; left:50%; transform:translateX(-50%); }
+.orbit-three .sign-8 { right:20px; bottom:45px; }
+
+@keyframes rotateClockwise {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
 }
 
-.signs-one span:nth-child(1) { top: 65px; left: 70px; }
-.signs-one span:nth-child(2) { top: 25px; left: 215px; }
-.signs-one span:nth-child(3) { top: 75px; right: 65px; }
-.signs-one span:nth-child(4) { top: 220px; right: 20px; }
-
-.signs-two span:nth-child(1) { bottom: 55px; left: 75px; }
-.signs-two span:nth-child(2) { bottom: 20px; left: 215px; }
-.signs-two span:nth-child(3) { bottom: 60px; right: 70px; }
-.signs-two span:nth-child(4) { top: 220px; left: 20px; }
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+@keyframes rotateAnti {
+    from { transform:rotate(360deg); }
+    to { transform:rotate(0deg); }
 }
 
-@keyframes rotate-reverse {
-    from {
-        transform: rotate(360deg);
-    }
+@keyframes counter22 {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
+}
 
-    to {
-        transform: rotate(0deg);
-    }
+@keyframes counter15 {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@keyframes counter10 {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(-360deg); }
 }
 
 
