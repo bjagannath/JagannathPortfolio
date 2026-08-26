@@ -1,0 +1,668 @@
+:root{
+  --bg:#00071b;
+  --bg2:#020a21;
+  --panel:rgba(5,3,35,.72);
+  --panel2:rgba(8,5,42,.58);
+  --text:#dedee5;
+  --muted:#a5a7b5;
+  --border:rgba(176,184,255,.48);
+  --purple:#7127ff;
+  --blue:#177dff;
+  --cyan:#00a8ff;
+  --white:#f0f1f5;
+  --max:1510px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;background:var(--bg);color:var(--text);
+  font-family:Inter,Arial,sans-serif;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-4;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(47,27,151,.12),transparent 28%),
+    linear-gradient(var(--bg),var(--bg));
+}
+a{color:inherit;text-decoration:none}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:-3;opacity:.9}
+.stars-a{
+  background-image:
+    radial-gradient(circle,#cfd9ff 1px,transparent 1.5px),
+    radial-gradient(circle,#7890c9 1px,transparent 1.4px);
+  background-size:173px 139px,251px 217px;
+  background-position:11px 8px,76px 43px;
+}
+.stars-b{
+  opacity:.65;
+  background-image:radial-gradient(circle,#fff 1.1px,transparent 1.8px);
+  background-size:317px 271px;background-position:170px 35px;
+}
+.stars-c{
+  opacity:.35;
+  background-image:radial-gradient(circle,#5b6c9e .8px,transparent 1.3px);
+  background-size:97px 113px;background-position:40px 80px;
+}
+.page-glow{
+  position:fixed;left:50%;top:-230px;transform:translateX(-50%);
+  width:720px;height:390px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(83,38,255,.33),rgba(20,30,120,.12) 42%,transparent 70%);
+  filter:blur(12px);z-index:-2;pointer-events:none;
+}
+.topbar{
+  width:min(var(--max),calc(100% - 80px));height:78px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(190,199,255,.15);
+}
+.logo{font:700 28px "Space Grotesk";letter-spacing:-1px}
+.logo span{color:#813bff}
+nav{display:flex;gap:34px}
+nav a{font-size:13px;color:#aaaebd;transition:.25s}
+nav a:hover{color:#fff}
+.top-contact{
+  padding:10px 18px;border:1px solid #4d5b9c;border-radius:30px;
+  color:#d8dcff;font-size:13px;box-shadow:0 0 16px rgba(56,83,255,.15)
+}
+.hero{
+  width:min(var(--max),calc(100% - 80px));min-height:745px;margin:auto;
+  display:grid;grid-template-columns:1.05fr .95fr;align-items:center;
+  position:relative;padding:60px 0 90px;
+}
+.hero-left{position:relative;z-index:2}
+.role-pill{
+  display:inline-block;padding:11px 18px;border:1px solid #4b5b9c;border-radius:30px;
+  color:#8db8ff;background:rgba(7,9,40,.52);box-shadow:0 0 16px rgba(42,108,255,.2);
+  font-size:14px;margin-bottom:45px
+}
+.hero h1{
+  font:700 clamp(55px,5.3vw,83px)/1.02 "Space Grotesk";
+  letter-spacing:-4px;color:#e1e1e6;max-width:800px
+}
+.hero h1 span,.section-title span,.skill-copy h3 span,.project-info h3 span{
+  background:linear-gradient(90deg,var(--purple),#315bff 72%);
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.hero-left>p{
+  max-width:620px;color:#c1c2cb;font-size:18px;line-height:1.52;margin-top:40px
+}
+.main-button{
+  display:inline-block;margin-top:45px;padding:17px 31px;border-radius:10px;
+  border:1px solid #4c5fb4;background:rgba(8,3,48,.8);
+  color:#f5f5f7;font-size:15px;box-shadow:0 0 18px rgba(61,89,255,.25);
+  transition:.25s
+}
+.main-button:hover{transform:translateY(-2px);box-shadow:0 0 27px rgba(79,87,255,.42)}
+.main-button.small{margin-top:22px;padding:13px 22px;font-size:13px}
+.hero-right{height:600px;position:relative;display:flex;align-items:center;justify-content:center}
+.orbit-glow{
+  width:410px;height:410px;border-radius:50%;
+  background:radial-gradient(circle,rgba(32,119,255,.16),transparent 66%);
+  filter:blur(5px);position:absolute
+}
+.network-art{
+  position:relative;width:430px;height:470px;border-radius:50%;
+  filter:drop-shadow(0 0 18px rgba(36,144,255,.25));
+  opacity:.82
+}
+.network-art:before{
+  content:"";position:absolute;inset:30px;border:1px solid rgba(98,162,255,.22);
+  border-radius:46% 54% 50% 50%;box-shadow:inset 0 0 50px rgba(0,132,255,.06)
+}
+.network-art:after{
+  content:"";position:absolute;left:50%;top:8%;height:84%;width:1px;
+  background:linear-gradient(transparent,rgba(100,181,255,.4),transparent)
+}
+.network-art i{
+  position:absolute;font-style:normal;color:#a7d8ff;font-size:19px;
+  text-shadow:0 0 12px #008cff;z-index:2
+}
+.network-art i:nth-child(1){left:17%;top:19%}.network-art i:nth-child(2){left:43%;top:10%}
+.network-art i:nth-child(3){right:16%;top:22%}.network-art i:nth-child(4){left:11%;top:48%}
+.network-art i:nth-child(5){left:49%;top:38%}.network-art i:nth-child(6){right:13%;top:52%}
+.network-art i:nth-child(7){left:28%;bottom:18%}.network-art i:nth-child(8){right:25%;bottom:10%}
+.network-lines{
+  position:absolute;inset:20%;border:1px dashed rgba(61,161,255,.3);
+  transform:rotate(20deg) skewY(-8deg)
+}
+/* =========================================
+   PROFILE ORBIT
+========================================= */
+
+.profile-orbit {
+    position: relative;
+    width: 520px;
+    height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   OUTER ROTATING RINGS
+========================================= */
+
+.orbit {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+/* Large outer ring */
+
+.orbit-one {
+    width: 490px;
+    height: 490px;
+
+    border: 1px solid rgba(86, 153, 255, 0.45);
+
+    box-shadow:
+        0 0 15px rgba(52, 122, 255, 0.15),
+        inset 0 0 20px rgba(52, 122, 255, 0.08);
+
+    animation: rotateClockwise 22s linear infinite;
+}
+
+
+/* Middle ring */
+
+.orbit-two {
+    width: 420px;
+    height: 420px;
+
+    border: 1px solid rgba(122, 77, 255, 0.5);
+
+    border-left-color: rgba(0, 166, 255, 0.8);
+    border-right-color: rgba(0, 166, 255, 0.8);
+
+    animation: rotateCounter 15s linear infinite;
+}
+
+
+/* Inner ring */
+
+.orbit-three {
+    width: 355px;
+    height: 355px;
+
+    border: 1px dashed rgba(74, 155, 255, 0.38);
+
+    animation: rotateClockwise 10s linear infinite;
+}
+
+
+/* =========================================
+   GLOW BEHIND PROFILE
+========================================= */
+
+.profile-orbit::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(48, 120, 255, 0.22),
+        rgba(77, 34, 255, 0.08),
+        transparent 70%
+    );
+
+    filter: blur(15px);
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.profile-frame {
+    position: relative;
+
+    width: 230px;
+
+    padding: 8px 8px 14px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 15, 48, 0.95),
+            rgba(5, 6, 28, 0.95)
+        );
+
+    border: 1px solid rgba(125, 142, 255, 0.75);
+
+    box-shadow:
+        0 0 20px rgba(56, 101, 255, 0.3),
+        0 0 50px rgba(73, 38, 255, 0.12);
+
+    z-index: 10;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-photo {
+    width: 214px;
+    height: 250px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #05091d;
+
+    border: 1px solid rgba(117, 137, 255, 0.35);
+
+    position: relative;
+}
+
+
+/* Your actual picture */
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    display: block;
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.profile-caption {
+    padding-top: 12px;
+}
+
+
+.profile-caption strong {
+    display: block;
+
+    color: #eeeeF5;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.profile-caption span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #9d7cff;
+
+    font-size: 11px;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================
+   ORBIT SIGNS
+========================================= */
+
+.orbit-signs {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+.orbit-signs span {
+    position: absolute;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #83c8ff;
+
+    font-size: 17px;
+
+    text-shadow:
+        0 0 7px #148cff,
+        0 0 15px rgba(20, 140, 255, 0.7);
+
+    background: rgba(2, 10, 32, 0.75);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(91, 164, 255, 0.35);
+}
+
+
+/* Positions for first set */
+
+.signs-one span:nth-child(1) {
+    top: 80px;
+    left: 85px;
+}
+
+.signs-one span:nth-child(2) {
+    top: 30px;
+    left: 245px;
+}
+
+.signs-one span:nth-child(3) {
+    top: 115px;
+    right: 65px;
+}
+
+.signs-one span:nth-child(4) {
+    right: 28px;
+    top: 250px;
+}
+
+
+/* Positions for second set */
+
+.signs-two span:nth-child(1) {
+    bottom: 65px;
+    left: 105px;
+}
+
+.signs-two span:nth-child(2) {
+    bottom: 25px;
+    left: 245px;
+}
+
+.signs-two span:nth-child(3) {
+    bottom: 85px;
+    right: 80px;
+}
+
+.signs-two span:nth-child(4) {
+    left: 25px;
+    top: 250px;
+}
+
+
+/* =========================================
+   ROTATION
+========================================= */
+
+@keyframes rotateClockwise {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes rotateCounter {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 720px) {
+
+    .profile-orbit {
+        width: 390px;
+        height: 390px;
+    }
+
+    .orbit-one {
+        width: 370px;
+        height: 370px;
+    }
+
+    .orbit-two {
+        width: 315px;
+        height: 315px;
+    }
+
+    .orbit-three {
+        width: 270px;
+        height: 270px;
+    }
+
+    .profile-frame {
+        width: 185px;
+    }
+
+    .profile-photo {
+        width: 169px;
+        height: 205px;
+    }
+
+}
+
+.scroll-cue{
+  position:absolute;bottom:25px;
+  left:50%;transform:translateX(-50%);
+  width:43px;height:68px;border:2px solid #b8c2d8;border-radius:30px;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(215,224,255,.2)
+}
+.scroll-cue span{font-size:28px;
+  line-height:1;animation:bounce 1.8s infinite}
+@keyframes bounce{0%,100%{transform:translateY(-5px)}50%{transform:translateY(5px)}}
+
+.section{width:min(var(--max),calc(100% - 80px));margin:auto;padding:95px 0}
+.section-title{
+  text-align:center;font:700 clamp(42px,4vw,60px) "Space Grotesk";
+  letter-spacing:-2px;color:#dedee5;margin-bottom:72px
+}
+.section-title span{color:initial;background:none;-webkit-text-fill-color:initial}
+.skills-stage{
+  display:grid;grid-template-columns:1fr 420px 1fr;align-items:center;gap:30px;
+  min-height:500px
+}
+.skill-copy{max-width:400px}
+.skill-copy h3{font:700 58px "Space Grotesk";letter-spacing:-3px;margin-bottom:38px}
+.skill-copy h3 span{margin-right:6px}
+.skill-copy p{color:#d1d2d8;font-size:17px;line-height:1.55}
+.skill-copy.right{justify-self:end}
+.brain-placeholder{
+  width:390px;height:390px;justify-self:center;position:relative;
+  display:flex;align-items:center;justify-content:center
+}
+.brain-ring{position:absolute;border-radius:50%;border:1px solid rgba(52,157,255,.4)}
+.ring-1{width:360px;height:300px;transform:rotate(22deg);box-shadow:0 0 50px rgba(22,121,255,.18)}
+.ring-2{width:310px;height:355px;transform:rotate(-27deg);border-color:rgba(118,77,255,.35)}
+.brain-core{
+  width:190px;height:145px;border-radius:47% 53% 48% 52%;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font:800 29px/1 "Space Grotesk";color:#8ad9ff;
+  background:radial-gradient(circle,rgba(0,130,255,.32),rgba(8,13,40,.82) 65%);
+  box-shadow:0 0 45px rgba(0,146,255,.38),inset 0 0 30px rgba(0,170,255,.16)
+}
+.brain-core small{font-size:16px;color:#875cff}
+.node{
+  position:absolute;padding:7px 10px;border:1px solid #4c73ae;border-radius:20px;
+  color:#9dd5ff;background:#060b22;box-shadow:0 0 13px rgba(0,137,255,.25);font-size:10px
+}
+.node-1{top:35px;left:50px}.node-2{top:90px;right:28px}.node-3{bottom:55px;left:22px}
+.node-4{bottom:25px;right:55px}.node-5{top:8px;right:150px}.node-6{top:150px;left:60px}
+.node-7{bottom:100px;right:180px}.node-8{top:180px;right:60px}
+.software-marquee{
+  width:100%;overflow:hidden;margin-top:55px;
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)
+}
+.software-track{display:flex;width:max-content;gap:20px;animation:marquee 30s linear infinite}
+.software-marquee:hover .software-track{animation-play-state:paused}
+.software-item{
+  width:112px;height:112px;border-radius:50%;flex:0 0 112px;
+  border:1px solid rgba(144,154,235,.22);background:rgba(6,4,31,.76);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  box-shadow:0 0 18px rgba(34,55,155,.1)
+}
+.software-item img{width:48px;height:48px;object-fit:contain}
+.software-item span{font-size:10px;color:#aaaec0}
+.software-item .text-icon{font-size:43px;color:#6c9cff;line-height:1}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.projects-section{border-top:1px solid rgba(180,190,255,.07)}
+.project-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:85px;align-items:center;
+  margin-bottom:105px
+}
+.project-row.reverse .project-visual{order:2}
+.project-row.reverse .project-info{order:1}
+.project-visual{
+  min-height:335px;border:1px solid rgba(153,163,235,.34);border-radius:20px;
+  background:rgba(5,3,31,.68);box-shadow:0 0 25px rgba(31,39,105,.22);
+  display:flex;align-items:center;justify-content:center;overflow:hidden
+}
+.mock-browser{width:84%;height:76%;border:1px solid #60668b;border-radius:16px;overflow:hidden;background:#ece9d8;box-shadow:0 0 30px rgba(119,130,255,.28)}
+.browser-bar{height:23px;background:#11162b;display:flex;gap:6px;align-items:center;padding-left:9px}
+.browser-bar span{width:6px;height:6px;border-radius:50%;background:#737a9d}
+.mock-content{height:calc(100% - 23px);display:flex;padding:14px;gap:10px;background:#f4f0dc}
+.mock-side{width:18%;background:#22274a;border-radius:7px}
+.mock-main{flex:1}.mock-title{width:58%;height:15px;background:#30386e;border-radius:8px;margin:3px 0 15px}
+.mock-cards{display:flex;gap:8px}.mock-cards b{height:72px;flex:1;border-radius:7px;background:#fff;border:1px solid #d9d5c7}
+.mock-chart{margin-top:12px;height:72px;border-radius:8px;background:linear-gradient(150deg,#d9e6ff,#fff)}
+.ecommerce{padding:35px;background:radial-gradient(circle at 50% 20%,rgba(98,70,255,.25),transparent 58%)}
+.shop-grid{width:82%;display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.shop-card{height:120px;border-radius:9px;background:linear-gradient(145deg,#e7e1ce,#bfc7e0);box-shadow:0 0 15px rgba(148,145,255,.24);position:relative}
+.shop-card:after{content:"";position:absolute;left:13%;right:13%;bottom:14px;height:7px;background:#2b3159;border-radius:5px}
+.bank{padding:32px;background:radial-gradient(circle at 50% 50%,rgba(44,94,255,.16),transparent 60%)}
+.terminal{
+  width:82%;padding:25px;border-radius:14px;background:#02030b;border:1px solid #314b83;
+  color:#78baff;font:14px/2.05 monospace;box-shadow:0 0 25px rgba(0,95,255,.2)
+}
+.terminal-ok{color:#7df0ae;margin-top:8px}
+.project-info h3{font:700 38px/1.16 "Space Grotesk";letter-spacing:-1.5px;color:#e1e1e7}
+.project-info p{font-size:16px;line-height:1.55;color:#b9bac6;margin:25px 0}
+.tech-tags{display:flex;gap:7px;flex-wrap:wrap}
+.tech-tags span{
+  padding:7px 12px;border:1px solid #343b70;border-radius:20px;color:#a9adca;font-size:11px;background:rgba(9,7,43,.6)
+}
+.project-button{
+  display:inline-block;margin-top:28px;padding:13px 24px;border:1px solid #344d91;
+  border-radius:9px;background:#08042e;color:#ececf2;font-size:13px;box-shadow:0 0 15px rgba(53,77,170,.18)
+}
+.about-section{border-top:1px solid rgba(180,190,255,.07)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr 1.35fr;grid-template-rows:1fr 1fr;gap:20px
+}
+.about-card{
+  min-height:285px;border:1px solid rgba(155,163,226,.55);border-radius:22px;
+  background:linear-gradient(145deg,rgba(8,5,45,.8),rgba(3,3,28,.74));
+  padding:35px;overflow:hidden;position:relative;box-shadow:0 0 25px rgba(26,22,84,.15)
+}
+.about-card h3{font:700 28px "Space Grotesk";margin-top:28px;color:#dedee7}
+.about-card p{color:#9fa1b2;line-height:1.55;font-size:14px;margin-top:42px;max-width:520px}
+.intro-card{grid-column:1}.stack-card{grid-column:2}.passion-card{grid-column:1/3}.world-card{grid-column:3;grid-row:1/3}
+.mini-avatar{
+  width:96px;height:96px;border-radius:50%;overflow:hidden;border:1px solid #6872a1;
+  background:#16173a;display:flex;align-items:center;justify-content:center
+}
+.mini-avatar img{width:100%;height:100%;object-fit:cover}.mini-avatar span{display:none;font:700 27px "Space Grotesk";color:#91a4ff}
+.floating-icons{display:flex;justify-content:center;gap:16px}
+.floating-icons span{
+  width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:#111128;border:1px solid #333a70;font-size:17px
+}
+.keyboard-art{height:100px;text-align:center;font-size:80px;color:#62699c;opacity:.45}
+.passion-card h3{margin-top:5px}
+.passion-card p{margin-top:38px}
+.world-art{
+  height:310px;border-radius:50%;margin:-15px auto 0;width:310px;
+  display:flex;align-items:center;justify-content:center;font-size:240px;color:#536282;
+  text-shadow:0 0 25px rgba(65,191,255,.3);
+  background:radial-gradient(circle,#17243c 0 35%,transparent 68%)
+}
+.world-card h3{font-size:25px;margin-top:0}
+.world-card p{margin-top:4px}
+.contact-section{border-top:1px solid rgba(180,190,255,.07)}
+.contact-box{
+  max-width:1000px;margin:auto;padding:45px;border:1px solid rgba(155,163,226,.55);
+  border-radius:20px;background:rgba(7,4,38,.72);text-align:center
+}
+.contact-lead{font:700 34px "Space Grotesk";color:#e1e1e7}
+.contact-muted{color:#9fa1b2;margin-top:8px}
+.email{display:inline-block;margin-top:28px;font:600 22px "Space Grotesk";color:#9e8aff}
+.socials{display:flex;justify-content:center;gap:30px;margin-top:28px;color:#b5b8ca;font-size:13px}
+.socials a:hover{color:#fff}
+footer{
+  width:min(var(--max),calc(100% - 80px));margin:auto;padding:25px 0 35px;
+  border-top:1px solid rgba(180,190,255,.12);display:flex;justify-content:space-between;
+  color:#73778d;font-size:11px
+}
+
+@media(max-width:1050px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:80px}
+  .hero-right{height:500px;margin-top:20px}
+  .profile-frame{right:8%}
+  .skills-stage{grid-template-columns:1fr;gap:35px;text-align:center}
+  .skill-copy,.skill-copy.right{justify-self:center;max-width:650px}
+  .skill-copy h3{font-size:45px;margin-bottom:20px}
+  .brain-placeholder{order:2}.skill-copy.left{order:1}.skill-copy.right{order:3}
+  .about-grid{grid-template-columns:1fr 1fr}.world-card{grid-column:1/3;grid-row:auto}.passion-card{grid-column:1/3}
+}
+@media(max-width:720px){
+  .topbar,.hero,.section,footer{width:min(100% - 30px,var(--max))}
+  nav{display:none}.top-contact{font-size:11px;padding:8px 12px}
+  .hero h1{font-size:51px;letter-spacing:-2.5px}.hero-left>p{font-size:15px}
+  .hero-right{height:455px}.network-art{width:340px;height:380px}.profile-frame{right:0;width:160px}
+  .profile-photo{width:140px;height:185px}
+  .section{padding:75px 0}.section-title{margin-bottom:50px}
+  .project-row,.project-row.reverse{grid-template-columns:1fr;gap:35px;margin-bottom:75px}
+  .project-row.reverse .project-visual,.project-row.reverse .project-info{order:initial}
+  .project-info h3{font-size:29px}
+  .project-visual{min-height:275px}.mock-browser{height:70%}
+  .about-grid{grid-template-columns:1fr}.intro-card,.stack-card,.passion-card,.world-card{grid-column:1}
+  .world-card{grid-row:auto}.world-art{height:230px;width:230px;font-size:180px}
+  .about-card p{margin-top:25px}
+  footer{flex-direction:column;gap:8px}
+}
+@media(max-width:450px){
+  .hero h1{font-size:43px}.role-pill{font-size:11px}.hero-right{height:400px}
+  .profile-frame{transform:scale(.82);transform-origin:right top}
+  .brain-placeholder{transform:scale(.8)}
+  .skill-copy h3{font-size:38px}.software-item{width:95px;height:95px;flex-basis:95px}
+}
