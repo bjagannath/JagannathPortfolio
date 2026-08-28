@@ -120,11 +120,19 @@ img {
     height: 78px;
     margin: auto;
 
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     border-bottom: 1px solid rgba(190, 199, 255, 0.15);
+    background: rgba(0, 7, 27, 0.85);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
