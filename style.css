@@ -1108,7 +1108,6 @@ nav a:hover {
 
     min-width: 125px;
     padding: 12px 24px;
-
     border: 1px solid rgba(180, 190, 255, 0.35);
     border-radius: 10px;
 
@@ -1117,40 +1116,17 @@ nav a:hover {
     font-weight: 600;
 
     background: rgba(7, 4, 38, 0.75);
-
     box-shadow: 0 0 16px rgba(56, 83, 255, 0.12);
-
     transition: all 0.3s ease;
 }
 
-/* LinkedIn */
-
-.linkedin-btn:hover {
+.social-btn:hover {
     transform: translateY(-3px);
-
     border-color: #1683ff;
-
     color: white;
-
     background: rgba(22, 131, 255, 0.15);
-
     box-shadow:
         0 0 20px rgba(22, 131, 255, 0.35);
-}
-
-/* GitHub */
-
-.github-btn:hover {
-    transform: translateY(-3px);
-
-    border-color: #9b8cff;
-
-    color: white;
-
-    background: rgba(120, 90, 255, 0.15);
-
-    box-shadow:
-        0 0 20px rgba(120, 90, 255, 0.35);
 }
 
 /* Mobile */
@@ -1171,19 +1147,15 @@ nav a:hover {
     color: #ffffff;
 }
 
-
 /* ---------- 14. FOOTER ---------- */
 
 footer {
     width: min(var(--max-width), calc(100% - 80px));
     margin: auto;
     padding: 25px 0 35px;
-
     display: flex;
     justify-content: space-between;
-
     border-top: 1px solid rgba(180, 190, 255, 0.12);
-
     color: #73778d;
     font-size: 11px;
 }
